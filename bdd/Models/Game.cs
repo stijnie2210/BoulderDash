@@ -8,7 +8,7 @@ namespace BoulderDash.Models {
     public class Game {
 
         private string[] _levels = new string[4];
-        private static Timer _timer;
+        private static Timer timer;
         public bool IsPlaying { get; set; }
         public int DiamondsLeft { get; set; }
         public int Score { get; set; }
@@ -23,9 +23,9 @@ namespace BoulderDash.Models {
             CurrentLevel = new Level(_levels[0], 150, new Level(_levels[1], 150, new Level(_levels[2], 999, null)));
             TimeLimit = CurrentLevel.TimeLimit;
             IsPlaying = true;
-            _timer = new Timer(1000);
-            _timer.Elapsed += UpdateTimer;
-            _timer.Start();
+            timer = new Timer(1000);
+            timer.Elapsed += UpdateTimer;
+            timer.Start();
 
         }
 
